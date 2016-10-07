@@ -1,5 +1,8 @@
 FROM ros:kinetic-perception
 
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
 # CPU Python 3.5 variant of Tensorflow
 ENV TENSORFLOW_VARIANT cpu/tensorflow-0.11.0rc0-cp27-none
 
@@ -43,3 +46,6 @@ ONBUILD RUN pip install --no-cache-dir -r requirements.txt
 
 ONBUILD COPY . /usr/src/app/
 ONBUILD RUN pip install --no-deps --no-cache-dir -e /usr/src/app/
+
+EXPOSE 8888
+CMD ["jupyter", "notebook"]

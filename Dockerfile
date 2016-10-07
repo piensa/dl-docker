@@ -39,7 +39,10 @@ RUN pip --no-cache-dir install \
 
 # Install Keras
 RUN pip --no-cache-dir install \
-    keras==1.1.0
+    keras==1.1.0 \
+    pytest==3.0.3 \
+    flake8==3.0.4
+
 
 ONBUILD COPY requirements.txt /usr/src/app/
 ONBUILD RUN pip install --no-cache-dir -r requirements.txt

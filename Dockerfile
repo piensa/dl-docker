@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -q -y \
         git-core \
         python \
         python-dev \
+        vim \
+        htop \
+        git \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
